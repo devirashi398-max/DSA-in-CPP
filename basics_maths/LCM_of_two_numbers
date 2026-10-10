@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int LCM(int n1,int n2) {
+        int gcd=0;
+       int num=n1;
+       int num1=n2;
+     while(n1>0 && n2>0){
+        if(n1>n2) n1=n1%n2;
+        else n2=n2%n1;
+     }
+     if(n1==0){
+      gcd=n2;
+     }
+     else{
+        gcd=n1;
+     }
+     return num*num1/gcd;
+    }
+};
