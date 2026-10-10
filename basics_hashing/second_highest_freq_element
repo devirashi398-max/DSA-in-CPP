@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int secondMostFrequentElement(vector<int>& nums) {
+      map<int,int>freq;
+      for(int i=0;i<nums.size();i++){
+        freq[nums[i]]++;
+      }
+      int max_freq=0;
+      int sec_mxfr=0;
+      int ans=-1;
+      for(auto it:freq){
+        if(it.second>max_freq){
+            sec_mxfr=max_freq;
+            max_freq=it.second;
+        }
+
+        else if(it.second< max_freq && it.second>sec_mxfr){
+            sec_mxfr=it.second;
+        }
+      }
+      if(sec_mxfr==0){
+        return ans;
+      }
+       for(auto it:freq){
+        if(sec_mxfr==it.second){
+            ans=it.first;
+            break;
+        }
+       }
+       return ans;
+      
+    }
+};
