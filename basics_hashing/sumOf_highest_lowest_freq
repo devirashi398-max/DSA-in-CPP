@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int sumHighestAndLowestFrequency(vector<int>& nums) {
+     map<int,int>freq;
+     for(int i=0;i<nums.size();i++){
+        freq[nums[i]]++;
+     }
+     
+     int max_freq=0;
+     int min_freq=INT_MAX;
+     for(auto it:freq){
+        if(it.second>max_freq){
+            max_freq=it.second;
+        }
+        if(it.second<min_freq){
+            min_freq=it.second;
+        }
+
+     }
+     return max_freq+min_freq;
+
+    }
+};
