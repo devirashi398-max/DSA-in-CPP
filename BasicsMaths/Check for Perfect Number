@@ -1,0 +1,14 @@
+class Solution {
+public:
+    bool isPerfect(int n) {
+       int sum=0;
+       int dup=n;
+       for(int i=1;i<n;i++){
+        if(n%i==0){
+            sum+=i;
+        }
+       }
+       if(sum==dup) return true;
+       else return false;
+    }
+};
