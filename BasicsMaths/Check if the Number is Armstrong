@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool isArmstrong(int n) {
+        int dup = n;
+        int digits = 0;
+        for (int t = n; t > 0; t /= 10) digits++;
+
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            int p = 1;
+            for (int i = 0; i < digits; i++) p *= digit;
+            sum += p;
+            n /= 10;
+        }
+
+        return dup == sum;
+    }
+};
