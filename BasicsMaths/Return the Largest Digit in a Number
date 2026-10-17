@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int largestDigit(int n) {
+        int lar=0;
+     while(n>0){
+        int ist=n%10;
+        lar=max(ist,lar);
+        n=n/10;
+     }
+     return lar;
+    }
+};
